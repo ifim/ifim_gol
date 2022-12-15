@@ -5,7 +5,6 @@
 int main(int argc, char **argv) {
   int width = 20;
   int height = 20;
-  int generations = 100;
 
   ifim_gol_config_t *config = parse_args(argc, argv);
 
@@ -22,7 +21,7 @@ int main(int argc, char **argv) {
   board_place_cell(board, 7, 8);
   */
   // Run it
-  board_run(board, config->loop, generations, board_display);
+  board_run(board, config->loop, config->generations, board_display);
   //board_show(board);
 
   board_destroy(board);

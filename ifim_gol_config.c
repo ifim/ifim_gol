@@ -14,6 +14,7 @@ ifim_gol_config_t *parse_args(int argc, char **argv) {
   }
 
   config->loop = false;
+  config->generations = 1;
   config->alive_symbol = '#';
   config->dead_symbol = ' ';
 
@@ -22,6 +23,7 @@ ifim_gol_config_t *parse_args(int argc, char **argv) {
     {"alive-symbol", required_argument, 0, 0},
     {"dead-symbol", required_argument, 0, 0},
     {"loop", no_argument, 0, 0},
+    {"generations", required_argument, 0, 0},
   };
 
   for (int c, option_index = 0;;) {
@@ -39,6 +41,8 @@ ifim_gol_config_t *parse_args(int argc, char **argv) {
         config->dead_symbol = (optarg == NULL) ? ' ' : optarg[0];
       } else if (strcmp("loop", options[option_index].name) == 0) {
         config->loop = true;
+      } else if (strcmp("generations", options[option_index].name) == 0) {
+        config->generations = atoi(optarg);
       }
 
       break;
