@@ -248,10 +248,6 @@ void board_run(ifim_gol_board_t *current_board, bool loop, int generations, void
 void board_display(ifim_gol_board_t *board) {
   system("clear");
   board_print(board);
-
-  struct timespec ts;
-  ts.tv_sec = 0;
-  ts.tv_nsec = 75000000;
-  nanosleep(&ts, NULL);
+  nanosleep(&(struct timespec){.tv_sec = 0, .tv_nsec = 75000000}, NULL);
 }
 
