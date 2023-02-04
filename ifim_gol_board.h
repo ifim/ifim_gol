@@ -20,8 +20,6 @@ void board_destroy(ifim_gol_board_t *board);
 
 void board_print(ifim_gol_board_t *board);
 
-int board_place_cell(ifim_gol_board_t *board, int x, int y);
-
 int board_get_cell_num_neighbors(ifim_gol_board_t *board, int x, int y);
 
 bool board_cell_lives(ifim_gol_board_t *board, int x, int y);

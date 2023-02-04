@@ -122,16 +122,6 @@ void board_print(ifim_gol_board_t *board) {
   }
 }
 
-int board_place_cell(ifim_gol_board_t *board, int x, int y) {
-  if (x < 1 || y < 1 || x >= board->width || y >= board->height) {
-    return 0;
-  }
-
-  board->table[y][x] = 1;
-
-  return 1;
-}
-
 int board_get_cell_num_neighbors(ifim_gol_board_t *board, int x, int y) {
   int num_neighbors = 0;
 
